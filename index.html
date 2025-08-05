@@ -89,9 +89,20 @@
       }
 
       body {
-        background-color: black;
-        color: white;
+        background-color: white;
+        color: black;
         font-family: "League Spartan", Arial, Helvetica, sans-serif;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: black;
+          color: white;
+        }
+      }
+
+      h1 {
+        display: none;
       }
 
       .content {
@@ -155,18 +166,29 @@
         gap: 15px;
         align-items: center;
         padding: 15px;
-        background-color: grey;
         border-radius: 10px;
 
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        background-color: #3a3a3a;
-        box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        background-color: #bababa;
       }
 
       .social:hover {
         transform: translateY(-6px) scale(1.02);
-        box-shadow: 0 10px 20px rgba(255, 255, 255, 0.25);
-        background-color: #4a4a4a;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+        background-color: #cacaca;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        .social {
+          background-color: #3a3a3a;
+          box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+        }
+
+        .social:hover {
+          background-color: #4a4a4a;
+          box-shadow: 0 10px 20px rgba(255, 255, 255, 0.25);
+        }
       }
 
       .social svg {
@@ -182,6 +204,7 @@
   <body>
     <main class="content">
       <div class="logo">
+        <h1>Mauro Brianza</h1>
         <svg
           class="logo-mb"
           version="1.1"
