@@ -6,6 +6,8 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no"
     />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
 
     <title>Mauro Brianza DJ</title>
     <meta name="description" content="High-Energy Tech House DJ" />
@@ -29,9 +31,12 @@
       content="https://mauro.brianza.github.io/logo.png"
     />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
 
     <style>
       /* Box sizing reset */
@@ -78,21 +83,30 @@
         -webkit-text-size-adjust: 100%;
       }
 
+      html,
+      body {
+        overflow: hidden;
+      }
+
       body {
         background-color: black;
         color: white;
-        font-family: 'League Spartan', Arial, Helvetica, sans-serif;
+        font-family: "League Spartan", Arial, Helvetica, sans-serif;
       }
 
       .content {
         width: 100vw;
-        height: 100vh;
+        height: 100dvh;
+
+        max-width: 375px;
+        margin: 0 auto;
 
         display: grid;
         grid-template-rows: 2fr 1fr;
         gap: 20px;
 
         padding: 20px;
+        padding-bottom: 100px;
       }
 
       @keyframes slideInLogo {
@@ -109,7 +123,7 @@
 
         opacity: 0;
         transform: translateX(100px);
-        animation: slideInLogo .5s ease-out forwards;
+        animation: slideInLogo 0.5s ease-out forwards;
       }
 
       @keyframes showSocial {
@@ -123,13 +137,14 @@
       .social-content {
         display: flex;
         flex-flow: column nowrap;
-        justify-content: space-evenly;
+        justify-content: center;
         padding: 0 40px;
+        gap: 20px;
 
         opacity: 0;
         visibility: hidden;
         transform: translateY(20px);
-        animation: showSocial 0.6s ease-out .5s forwards;
+        animation: showSocial 0.6s ease-out 0.5s forwards;
       }
 
       .social {
